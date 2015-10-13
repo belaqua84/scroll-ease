@@ -171,37 +171,8 @@
                 };
 
                 var useEase = function(currentTime, start, change, duration){
-                    var easingType;
-                    if(easing === 'easeInQuad')return Math.easeInQuad(currentTime, start, change, duration);
-                    else if(easing === 'easeInOutQuad'){return Math.easeInOutQuad(currentTime, start, change, duration)}
-                    else if(easing === 'easeInCubic'){return Math.easeInCubic(currentTime, start, change, duration)}
-                    else if(easing === 'easeOutCubic'){return Math.easeOutCubic(currentTime, start, change, duration)}
-                    else if(easing === 'easeInOutCubic'){return Math.easeInOutCubic(currentTime, start, change, duration)}
-                    else if(easing === 'easeInQuart'){return Math.easeInQuart(currentTime, start, change, duration)}
-                    else if(easing === 'easeOutQuart'){return Math.easeOutQuart(currentTime, start, change, duration)}
-                    else if(easing === 'easeInOutQuart'){return Math.easeInOutQuart(currentTime, start, change, duration)}
-                    else if(easing === 'easeInQuint'){return Math.easeInQuint(currentTime, start, change, duration)}
-                    else if(easing === 'easeOutQuint'){return Math.easeOutQuint(currentTime, start, change, duration)}
-                    else if(easing === 'easeInOutQuint'){return Math.easeInOutQuint(currentTime, start, change, duration)}
-                    else if(easing === 'easeInSine'){return Math.easeInSine(currentTime, start, change, duration)}
-                    else if(easing === 'easeOutSine'){return Math.easeOutSine(currentTime, start, change, duration)}
-                    else if(easing === 'easeInOutSine'){return Math.easeInOutSine(currentTime, start, change, duration)}
-                    else if(easing === 'easeInExpo'){return Math.easeInExpo(currentTime, start, change, duration)}
-                    else if(easing === 'easeOutExpo'){return Math.easeOutExpo(currentTime, start, change, duration)}
-                    else if(easing === 'easeInOutExpo'){return Math.easeInOutExpo(currentTime, start, change, duration)}
-                    else if(easing === 'easeInCirc'){return Math.easeInCirc(currentTime, start, change, duration)}
-                    else if(easing === 'easeOutCirc'){return Math.easeOutCirc(currentTime, start, change, duration)}
-                    else if(easing === 'easeInOutCirc'){return Math.easeInOutCirc(currentTime, start, change, duration)}
-                    else if(easing === 'easeInElastic'){return Math.easeInElastic(currentTime, start, change, duration)}
-                    else if(easing === 'easeOutElastic'){return Math.easeOutElastic(currentTime, start, change, duration)}
-                    else if(easing === 'easeInOutElastic'){return Math.easeInOutElastic(currentTime, start, change, duration)}
-                    else if(easing === 'easeInBack'){return Math.easeInBack(currentTime, start, change, duration)}
-                    else if(easing === 'easeOutBack'){return Math.easeOutBack(currentTime, start, change, duration)}
-                    else if(easing === 'easeInOutBack'){return Math.easeInOutBack(currentTime, start, change, duration)}
-                    else if(easing === 'easeInBounce'){return Math.easeInBounce(currentTime, start, change, duration)}
-                    else if(easing === 'easeOutBounce'){return Math.easeOutBounce(currentTime, start, change, duration)}
-                    else if(easing === 'easeInOutBounce'){return Math.easeInOutBounce(currentTime, start, change, duration)}
-                    else {return Math.easeOutCubic(currentTime, start, change, duration)}         
+                    var easeType = easing || 'easeOutCubic';
+                    return Math[easeType](currentTime, start, change, duration);    
                 };           
             }      
         }
